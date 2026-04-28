@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #966666; /* mais compatível */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card{
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(78, 76, 76);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 25px;
+    gap: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+.socialContainer{
+    width: 52px;
+    height: 52px;
+    background-color: rgb(56, 37, 37);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 12px;
+/* --- general suavization --- */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.socialImg{
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+    filter: invert(100%) sepia(100%) grayscale(100%);
+    /* --- inicial state --- */
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+/* --- hover effect more smooth --- */
+.socialContainer:hover{
+    transform: translateY(-6px) scale(1.08);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.socialContainer:hover .socialImg{
+    transform: translateY(-2px) scale(1.15);
+    opacity: 1;
+}
+/* --- keyframes animation --- */
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
